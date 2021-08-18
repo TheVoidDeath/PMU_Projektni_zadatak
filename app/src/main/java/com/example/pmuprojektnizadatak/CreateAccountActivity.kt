@@ -55,6 +55,11 @@ class CreateAccountActivity : AppCompatActivity() {
             }
         }
 
-
+        val BackButton=findViewById<Button>(R.id.create_account_BackButton)
+        BackButton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java).apply { }
+            startActivity(intent)
+            finish()
+        }
     }
 }
