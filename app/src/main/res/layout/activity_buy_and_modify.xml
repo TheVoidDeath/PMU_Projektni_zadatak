@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".buy_and_modify_activity">
+
+    <ScrollView
+        android:id="@+id/buy_bLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".buy_and_modify_activity">
+
+            <TextView
+                android:id="@+id/buy_Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/buy_Price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buy_Title" />
+
+            <TextView
+                android:id="@+id/buy_Location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buy_Price" />
+
+            <TextView
+                android:id="@+id/buy_ACount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buy_Location" />
+
+            <LinearLayout
+                android:id="@+id/buy_bLayout_Child_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/buy_SwitchToModify"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buy_ACount">
+
+                <LinearLayout
+                    android:id="@+id/buy_bLayout_Child_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/buy_AmountLbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:labelFor="@id/buy_AmountSbinner"
+                        android:text="How many?"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+                    <Spinner
+                        android:id="@+id/buy_AmountSbinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:spinnerMode="dialog" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/buy_ETA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="TextView"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+                <Button
+                    android:id="@+id/buy_BuyBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Buy selected Amount"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buy_SwitchToModify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modify Item"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/buy_mLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".buy_and_modify_activity">
+
+            <EditText
+                android:id="@+id/buy_Title_Modify"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:hint="Title of Product"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/buy_Price_Modify"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:hint="Price"
+                android:inputType="number"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buy_Title_Modify" />
+
+            <TextView
+                android:id="@+id/buy_Location_Modify_Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:labelFor="@id/buy_Location_Modify_Spinner"
+                android:text="Location:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintEnd_toStartOf="@+id/buy_Location_Modify_Spinner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buy_Price_Modify" />
+
+            <Spinner
+                android:id="@+id/buy_Location_Modify_Spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_margin="25dp"
+                android:layout_marginTop="25dp"
+                android:autofillHints="Location"
+                android:spinnerMode="dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buy_Price_Modify" />
+
+            <EditText
+                android:id="@+id/buy_ACount_Modify"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:hint="Amount of product Available"
+                android:inputType="numberSigned"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buy_Location_Modify_Spinner" />
+
+            <Button
+                android:id="@+id/buy_mSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Modifications"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintBottom_toTopOf="@+id/buy_SwitchToBuy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buy_ACount_Modify" />
+
+            <Button
+                android:id="@+id/buy_SwitchToBuy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:text="Buy Item"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

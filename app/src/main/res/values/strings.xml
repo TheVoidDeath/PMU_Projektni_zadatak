@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">PMU Projektni zadatak</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Username</string>
+    <string name="prompt_password">Password</string>
+
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+
+    <string name="create_account">Create Account</string>
+    <string name="administrator_password_leave_empty">Administrator Password (Leave empty)</string>
+    <string name="register">Register</string>
+
+
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Proizvodi</string>
+    <string name="title_dashboard">Informacije o nalogu</string>
+    <string name="title_notifications">Korpa</string>
+
+</resources>

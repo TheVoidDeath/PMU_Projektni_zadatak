@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/activity_buy_and_modify.xml" value="0.25" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/activity_create_account.xml" value="0.21105072463768115" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/buy_and_modify_activity.xml" value="0.1947463768115942" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/dashboard_recycleview_item_purchased.xml" value="0.381025641025641" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/fragment_home.xml" value="0.1947463768115942" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/fragment_notifications.xml" value="0.381025641025641" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/notification_recyclerview_item_layout.xml" value="0.381025641025641" />
+        <entry key="..\:/Skola/6-Semestar/Kotlin_(Android)/Pmu_Projektni_Zadatak/app/src/main/res/layout/recycleview_layout.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
