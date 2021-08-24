@@ -24,6 +24,7 @@ import com.example.pmuprojektnizadatak.databinding.FragmentDashboardBinding
 import android.content.DialogInterface
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pmuprojektnizadatak.ui.home.HomeFragment
+import java.lang.Exception
 
 
 class DashboardFragment : Fragment() {
@@ -58,7 +59,7 @@ class DashboardFragment : Fragment() {
 
 
         Container.Companion.UpdateLoadedUserList(root.context)
-        Container.LoggedinUser=Container.UsersList.searchUsers(Container.LoggedinUser.UserName,Container.LoggedinUser.Password)!!
+        Container.LoggedInUser=Container.UsersList.searchUsers(Container.LoggedInUser!!.UserName,Container.LoggedInUser!!.Password)!!
         var recyclerView= root.findViewById<RecyclerView>(R.id.dashboard_PastPurchases_recyclerview);
         recyclerView.setLayoutManager(LinearLayoutManager(root.context));
         val recyclerView_Adapter= DashboardFragment.RecyclerViewAdapter(root.context, activity)
@@ -66,19 +67,22 @@ class DashboardFragment : Fragment() {
 
         fun load_fromUser()
         {
-            name_Edit.setText(Container.LoggedinUser.Ime)
-            surname_Edit.setText(Container.LoggedinUser.Prezime)
-            email_Edit.setText(Container.LoggedinUser.Email)
-            country_Edit.setText(Container.LoggedinUser.Country)
-            city_Edit.setText(Container.LoggedinUser.Grad)
-            street_Edit.setText(Container.LoggedinUser.Street)
-            streetNum_Edit.setText(Container.LoggedinUser.StreetNum)
+            if(Container.LoggedInUser!=null) {
+                name_Edit.setText(Container.LoggedInUser!!.Ime)
+                surname_Edit.setText(Container.LoggedInUser!!.Prezime)
+                email_Edit.setText(Container.LoggedInUser!!.Email)
+                country_Edit.setText(Container.LoggedInUser!!.Country)
+                city_Edit.setText(Container.LoggedInUser!!.Grad)
+                street_Edit.setText(Container.LoggedInUser!!.Street)
+                streetNum_Edit.setText(Container.LoggedInUser!!.StreetNum)
 
-            recyclerView_Adapter.notifyDataSetChanged();
+                recyclerView_Adapter.notifyDataSetChanged();
+            }
+            else throw Exception();
         }
         fun save_toUser()
         {
-            Container.UsersList.AllUsers.find { it.UserName.compareTo(Container.LoggedinUser.UserName)==0 }
+            Container.UsersList.AllUsers.find { it.UserName.compareTo(Container.LoggedInUser!!.UserName)==0 }
                 ?.ChangeUserData(
                     name_Edit.text.toString(),
                     surname_Edit.text.toString(),
@@ -88,8 +92,8 @@ class DashboardFragment : Fragment() {
                     street_Edit.text.toString(),
                     streetNum_Edit.text.toString()
                 )
-            Container.LoggedinUser=
-                Container.UsersList.searchUsers(Container.LoggedinUser.UserName,Container.LoggedinUser.Password)!!
+            Container.LoggedInUser=
+                Container.UsersList.searchUsers(Container.LoggedInUser!!.UserName,Container.LoggedInUser!!.Password)!!
 
             Container.Companion.SaveLoadedUserList(root.context)
 
@@ -137,7 +141,7 @@ class DashboardFragment : Fragment() {
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             //val item = Container.Items[position]
-            val item = Container.LoggedinUser.Purchase_History[position]
+            val item = Container.LoggedInUser!!.Purchase_History[position]
             holder.textViewDate.text = item.Date
 
             holder.itemView.setOnClickListener(object : View.OnClickListener {
@@ -156,7 +160,7 @@ class DashboardFragment : Fragment() {
         }
 
         override fun getItemCount(): Int {
-            val size=Container.LoggedinUser.Purchase_History
+            val size=Container.LoggedInUser!!.Purchase_History
             if(size!=null)
                 return size.size
             else return 0;
@@ -165,7 +169,7 @@ class DashboardFragment : Fragment() {
         inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             lateinit var textViewDate: TextView ;
             init {
-                if(itemView.findViewById<TextView>(R.id.recycleview_Item_Title)!=null && itemView.findViewById<TextView>(R.id.recycleview_Item_Price)!=null)
+                if(itemView.findViewById<TextView>(R.id.dashboard_recycleview_item_MainText)!=null)
                 {
                     textViewDate= itemView.findViewById<TextView>(R.id.dashboard_recycleview_item_MainText)
                 }
@@ -175,6 +179,7 @@ class DashboardFragment : Fragment() {
 
         init {
             this.context = context
+            Container.LoggedInUser!!.Purchase_History.reverse()
         }
     }
 }

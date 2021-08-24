@@ -69,8 +69,8 @@ class HomeFragment : Fragment() {
             //ActivityCompat.startActivity(root.context,intent,Bundle())
         }
 
-        if(Container.LoggedinUser!=null) {
-            if (Container.LoggedinUser.ClearanceLVL == 0) {
+        if(Container.LoggedInUser!=null) {
+            if (Container.LoggedInUser!!.ClearanceLVL == 0) {
                 Add_BTN.isVisible=false;
 
                 val constraintLayout: ConstraintLayout = root.findViewById(R.id.home_Parent)

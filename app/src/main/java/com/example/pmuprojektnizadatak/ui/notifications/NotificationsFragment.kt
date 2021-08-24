@@ -45,11 +45,14 @@ class NotificationsFragment : Fragment() {
         recyclerView.setAdapter(recyclerView_Adapter);
         setTotals()
 
-        val Buy_Button=root.findViewById<Button>(R.id.notification_BuyButton)
+
+        val Buy_Button=root.findViewById<TextView>(R.id.notification_BuyButton)
+
+        Buy_Button.requestFocus()
         Buy_Button.setOnClickListener {
-            if(Container.LoggedinUser.checkData())
+            if(Container.LoggedInUser!!.checkData() && Container.CurrentBasket.Shoping_List.size>0)
             {
-                Container.UsersList.AllUsers.find { it.UserName.compareTo(Container.LoggedinUser.UserName)==0 }!!.Add_Basket_ToHystory(Container.CurrentBasket)
+                Container.UsersList.AllUsers.find { it.UserName.compareTo(Container.LoggedInUser!!.UserName)==0 }!!.Add_Basket_ToHystory(Container.CurrentBasket)
                 Container.SaveLoadedUserList(root.context)
 
 
@@ -60,7 +63,7 @@ class NotificationsFragment : Fragment() {
             }
             else
             {
-                Buy_Button.setError("You need to set your shipping information before making a purchase")
+                Buy_Button.setError("You need to set your shipping information before making a purchase \nAnd/Or\nYou can't buy an empty basket")
             }
         }
 
