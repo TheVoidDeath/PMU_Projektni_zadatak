@@ -21,8 +21,6 @@ import com.example.pmuprojektnizadatak.MainActivity
 import com.example.pmuprojektnizadatak.R
 import com.example.pmuprojektnizadatak.data.Container
 import com.example.pmuprojektnizadatak.data.model.User
-import com.example.pmuprojektnizadatak.data.model.Users
-
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
@@ -37,7 +35,8 @@ class LoginActivity : AppCompatActivity() {
         val login = findViewById<Button>(R.id.login)
         val loading = findViewById<ProgressBar>(R.id.loading)
 
-        val registry_button=findViewById<Button>(R.id.register_activity_Start).setOnClickListener {
+        val registryButton=findViewById<Button>(R.id.register_activity_Start)
+        registryButton.setOnClickListener {
             val intent = Intent(this, CreateAccountActivity::class.java).apply { }
             startActivity(intent)
             //finish()
@@ -108,7 +107,7 @@ class LoginActivity : AppCompatActivity() {
 
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
-                Container.Companion.UpdateLoadedUserList(this@LoginActivity);
+                Container.UpdateLoadedUserList(this@LoginActivity)
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }
         }
@@ -117,7 +116,7 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUiWithUser(model: User) {
         val welcome = getString(R.string.welcome)
         val displayName = model.GetUserName()
-        Container.LoggedinUser=model;
+        Container.LoggedinUser=model
         // Poruka o uspesnom loginu i start sledeceg aktivitija
         Toast.makeText(
                 applicationContext,
