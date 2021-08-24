@@ -37,14 +37,17 @@
                 android:text="TextView"
                 android:textAlignment="center" />
 
-            <Button
+            <TextView
                 android:id="@+id/notification_BuyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Kupi sve"
-                android:textAlignment="center" />
-
+                android:textAlignment="center"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                style="@android:style/Widget.Button"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

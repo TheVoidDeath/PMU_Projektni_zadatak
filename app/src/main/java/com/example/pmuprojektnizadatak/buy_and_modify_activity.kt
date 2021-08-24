@@ -113,7 +113,7 @@ class buy_and_modify_activity : AppCompatActivity() {
         val m_view=findViewById<ScrollView>(R.id.buy_mLayout)
         if(b_view.isVisible)
         {
-            if(Container.LoggedinUser.ClearanceLVL==1) {
+            if(Container.Companion.LoggedInUser!=null && Container.Companion.LoggedInUser!!.ClearanceLVL==1) {
                 val switchToModify: Button = findViewById(R.id.buy_SwitchToModify)
                 switchToModify.setOnClickListener {
                     b_view.isVisible = false; m_view.isVisible = true;
@@ -137,8 +137,11 @@ class buy_and_modify_activity : AppCompatActivity() {
             val ammount_available=findViewById<TextView>(R.id.buy_ACount).also { it.setText("Trenutno ima :" + item.Available_Count.toString() + "u zalihama") }
             val ammount_Selector=findViewById<Spinner>(R.id.buy_AmountSbinner)
 
+            var max_buy:Int;
+            if(item.Available_Count>1000) max_buy=1000
+            else max_buy=item.Available_Count
             val arrayAdapter=ArrayAdapter<Int>(
-                this,android.R.layout.simple_spinner_item,(1..item.Available_Count).toMutableList()
+                this,android.R.layout.simple_spinner_item,(1..max_buy).toMutableList()
             ).also { adapter ->
                 // Specify the layout to use when the list of choices appears
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

@@ -165,11 +165,7 @@ data class Basket(var Shoping_List: MutableList<BoughtItem>)
 @Serializable
 data class Order(val Shoping_List:Basket)
 {
-    var Date:String
-        get() {
-            return Date
-        }
-        set(value) {Date=value}
+    lateinit var Date:String
     init {
         Date=SimpleDateFormat("dd/M/yyyy").format((Date() ) );
     }

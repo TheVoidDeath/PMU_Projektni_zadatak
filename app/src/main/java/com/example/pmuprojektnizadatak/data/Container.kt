@@ -13,6 +13,7 @@ import java.net.MalformedURLException
 import java.net.URL
 import android.os.AsyncTask
 import androidx.core.app.ActivityCompat
+import androidx.lifecycle.MutableLiveData
 import com.downloader.Error
 import com.downloader.OnDownloadListener
 import com.downloader.PRDownloader
@@ -94,7 +95,7 @@ class Container: Application() {
             }
         }
         lateinit var UsersList:Users;
-        lateinit var LoggedinUser:User
+        var LoggedInUser: User? =null;
         lateinit var CityList:Cities;
 
         lateinit var location:List<Double>;
@@ -140,6 +141,9 @@ class Container: Application() {
     }
 
 
+
+
+
     override fun onCreate() {
         super.onCreate()
         UpdateLoadedUserList(this)
@@ -167,6 +171,7 @@ class Container: Application() {
 
 
     }
+
 
 
     //parsing sql

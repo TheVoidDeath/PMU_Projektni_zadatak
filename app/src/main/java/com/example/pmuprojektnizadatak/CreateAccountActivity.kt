@@ -38,7 +38,7 @@ class CreateAccountActivity : AppCompatActivity() {
                     setMessage("Succesfully registered")
                     setOnDismissListener {
                         val intent = Intent(this.context, LoginActivity::class.java).apply { }
-                        startActivity(intent)
+                        //startActivity(intent)
                         finish()
                     }
                     show()
@@ -58,7 +58,7 @@ class CreateAccountActivity : AppCompatActivity() {
         val BackButton=findViewById<Button>(R.id.create_account_BackButton)
         BackButton.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java).apply { }
-            startActivity(intent)
+            //startActivity(intent)
             finish()
         }
     }

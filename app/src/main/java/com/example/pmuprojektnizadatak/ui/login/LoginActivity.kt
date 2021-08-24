@@ -116,7 +116,7 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUiWithUser(model: User) {
         val welcome = getString(R.string.welcome)
         val displayName = model.GetUserName()
-        Container.LoggedinUser=model
+        Container.LoggedInUser=model
         // Poruka o uspesnom loginu i start sledeceg aktivitija
         Toast.makeText(
                 applicationContext,
