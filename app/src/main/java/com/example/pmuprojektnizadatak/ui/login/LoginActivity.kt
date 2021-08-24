@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
         val registry_button=findViewById<Button>(R.id.register_activity_Start).setOnClickListener {
             val intent = Intent(this, CreateAccountActivity::class.java).apply { }
             startActivity(intent)
-            finish()
+            //finish()
         }
 
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory()).get(LoginViewModel::class.java)
